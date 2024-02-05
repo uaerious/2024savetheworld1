@@ -1,0 +1,23 @@
+# Assume the system is set to "away"
+away = True
+main_door = True  # Open for the scenario
+window = True  # open for the scenario
+motion = False
+
+alarm = False
+if away and main_door:
+    alarm = True
+    print("Main door opened. Activating alarm.")
+
+if away and window:
+    alarm = True
+    print("Window opened. Activating alarm.")
+
+if away and motion:
+    alarm = True
+    print("Motion detected. Activating alarm.")
+
+if away and not (main_door or window or motion):
+    print("No security breach detected.")
+
+print(f'Alarm status: {alarm}')  # f string
