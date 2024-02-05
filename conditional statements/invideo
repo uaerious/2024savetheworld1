@@ -1,0 +1,27 @@
+# conditional statement (p)
+# Imagine you are designing a smart home security system.
+
+# Assume the system is set to "away"
+away = True
+main_door = True  # Open for the scenario
+window = True  # Closed for the scenario
+motion = False
+
+alarm = False  # Initialize alarm status to False
+
+if away:
+    if main_door:
+        alarm = True
+        print("Main door opened. Activating alarm.")
+    elif window:
+        alarm = True
+        print("Window opened. Activating alarm.")
+    elif motion:
+        alarm = True
+        print("Motion detected. Activating alarm.")
+    else:
+        print("No security breach detected.")
+else:
+    print("System is not set to 'away'. No security check performed.")
+
+print(f'Alarm status: {alarm}')  # f string
