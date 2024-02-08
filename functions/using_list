@@ -1,0 +1,31 @@
+# functions + list (practical)
+# Function to greet guests as they arrive
+def greet_guest(name):
+    print(f"Welcome to the party, {name}!")
+
+# Function to record guests and their dietary preferences
+def record_guest(name, dietary_pref):
+    guest_list.append({'name': name, 'dietary_preference': dietary_pref})
+    print(f"{name} has been added, dietary preference: {dietary_pref}")
+
+# Function to display the guest list and their dietary preferences
+def display_guest_list():
+    print("\nGuest List:") # white space
+    for guest in guest_list:
+        print(f"{guest['name']} - {guest['dietary_preference']}")
+
+# Initialize an empty guest list
+guest_list = []
+
+# Greet and record guests
+greet_guest("Alice")
+record_guest("Alice", "Vegetarian")
+
+greet_guest("Bob")
+record_guest("Bob", "Non-Vegetarian")
+
+greet_guest("Charlie")
+record_guest("Charlie", "Vegan")
+
+# Display the final guest list
+display_guest_list()
