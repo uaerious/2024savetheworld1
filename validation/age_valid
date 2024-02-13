@@ -1,0 +1,15 @@
+# Age validation (another eg)
+# assume invalid age
+valid_age = False
+while not valid_age:
+  age = input("age: ")
+  if age == '': # presence check len(age) == 0
+    print("empty...")
+  elif not age.isdigit():
+    print("Age must be integer")
+  elif not 16 <= int(age) <= 19:
+    print("age range is 16-19")
+  else:
+    valid_age = True # cont
+
+print(f"{age}, ok good.")
