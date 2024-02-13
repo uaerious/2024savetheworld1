@@ -1,0 +1,32 @@
+# validation (practical)
+def validate_registration(username, email, password):
+    # Presence check
+    if not username or not email or not password:
+        return "All fields must be filled out."
+
+    # Length check
+    if len(username) < 6 or len(password) < 8:
+        return "Username must be at least 6 characters long, and password must be at least 8 characters long." # btr to use print
+
+    # Range check for password
+    if not (8 <= len(password) <= 20):
+        return "Password must be between 8 and 20 characters long."
+
+    # Format check for email
+    if "@" not in email or "." not in email:
+        return "Invalid email address."
+
+    # If all checks pass, return None to indicate successful validation
+    return None
+
+# Example usage
+username_input = input("Enter username: ")
+email_input = input("Enter email: ")
+password_input = input("Enter password: ")
+
+validation_result = validate_registration(username_input, email_input, password_input)
+
+if validation_result is None: # none is returned when valid
+    print("Registration successful!")
+else:
+    print(f"Registration failed. Reason: {validation_result}")
