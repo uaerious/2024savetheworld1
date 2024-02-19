@@ -1,0 +1,33 @@
+# check digit (IMEI)
+def generate_check_digit(gupc):
+    gupc_list = []
+    for i in range(len(gupc)):
+        gupc_list.append(int(gupc[i]))
+
+    # Add the digits in the odd-numbered positions (first, third, fifth, etc.) together and multiply by 3.
+    odd_sum = sum(gupc_list[::2]) * 3
+
+    # Add the digits in the even-numbered positions (second, fourth, sixth, etc.) to the result.
+    even_sum = sum(gupc_list[1::2])
+    total = odd_sum + even_sum
+    # Find the result modulo 10 (i.e. the remainder when divided by 10).
+    remainder = total % 10
+
+    # If the result is not zero, subtract the result from 10.
+    if remainder == 0:
+        return remainder
+    else:
+        return 10 - remainder
+
+def is_valid_check_digit(upc):
+    check_digit = int(upc[-1])
+    calculated_check_digit = generate_check_digit(upc[:-1])
+
+    if calculated_check_digit == check_digit:
+        return "ok"
+    else:
+        return f"Correct check digit: {calculated_check_digit}"
+
+# main
+print(is_valid_check_digit('087684009743'))
+print(is_valid_check_digit('043197116826'))
