@@ -1,0 +1,21 @@
+# insertion sort (p) O(n^2)
+def insertion_sort(hand):
+    # Iterate over each card in the hand
+    for i in range(1, len(hand)): # (start, stop(not inclusive)).
+        key = hand[i]  # Select the current card as the key
+        j = i - 1 # assign j to be the card on left
+
+        # Compare the key card with cards to its left and shift them to the right if needed
+        while j >= 0 and key < hand[j]:
+            hand[j + 1] = hand[j]  # Shift the card to the right
+            j -= 1 # j becomes next item to be on left
+        hand[j + 1] = key  # next number to insert is the key
+
+# Example usage
+hand_of_cards = [5, 2, 8, 4, 7]
+
+print("Unsorted Hand:", hand_of_cards)
+
+insertion_sort(hand_of_cards)
+
+print("Sorted Hand:", hand_of_cards)
