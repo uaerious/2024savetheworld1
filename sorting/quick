@@ -1,0 +1,30 @@
+# quick sort (p) (O(n log n)), worst case: O(n^2)
+def quicksort(records):
+    # Base case: If the list has 1 or 0 elements, it is already sorted
+    if len(records) <= 1:
+        return records
+
+    # Choose the pivot element (in this case, the middle element)
+    pivot = records[len(records) // 2]
+
+    # Partition the list into three sublists: left, middle, and right
+    left, middle, right = [], [], []
+    for record in records:
+        if record < pivot:
+            left.append(record)
+        elif record == pivot:
+            middle.append(record)
+        else:
+            right.append(record)
+
+    # Recursively sort the left and right sublists and combine them with the middle list
+    return quicksort(left) + middle + quicksort(right)
+
+# Example usage
+employee_records = [10, 59, 32, 100, 20]
+
+# Apply quicksort to sort the employee records based on employee IDs
+sorted_records = quicksort(employee_records)
+
+# Print the sorted employee records
+print("Sorted Employee Records:", sorted_records)
