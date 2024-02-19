@@ -1,0 +1,40 @@
+# oop. Imagine you are running a dealership. Using OOP, make a class Vehicle, that stores a vehicle's make, model and the year produced. 
+# Create subclasses Car and Motorcycle that uses polymorphism, encapsulation and inheritance
+
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        print(f"\nVehicle Information:")
+        print(f"Make: {self.make}")
+        print(f"Model: {self.model}")
+        print(f"Year: {self.year}")
+        
+class Car(Vehicle):
+    def __init__(self, make, model, year, num_doors):
+        super().__init__(make, model, year)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        super().display_info()
+        print(f"Number of Doors: {self.num_doors}")
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, make, model, year, num_wheels):
+        super().__init__(make, model, year)
+        self.num_wheels = num_wheels
+
+    def display_info(self):
+        super().display_info()
+        print(f"Number of Wheels: {self.num_wheels}")
+
+# Example
+car = Car(make="Toyota", model="Camry", year=2022, num_doors=4)
+motorcycle = Motorcycle(make="Harley-Davidson", model="Sportster", year=2021, num_wheels=2)
+
+car.display_info()
+motorcycle.display_info()
