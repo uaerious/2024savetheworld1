@@ -1,0 +1,18 @@
+# bubble sort (p) (O(n^2))
+def bubble_sort(deck):
+    n = len(deck) # Get the number of cards in the deck
+
+    # Traverse through all cards
+    for i in range(n - 1): # Outer loop: Last i cards are already sorted, so we don't need to check them again
+        for j in range(0, n - i - 1): # Inner loop: Compare numbers of adjacent cards and swap if they are in the wrong order
+            if deck[j] > deck[j + 1]: # eg 8 > 3
+                deck[j], deck[j + 1] = deck[j + 1], deck[j]  # Swap: 3, 8
+
+# Example usage
+unsorted_deck = [8, 3, 10, 5, 2, 7] # list
+
+print("Unsorted Deck:", unsorted_deck)
+
+bubble_sort(unsorted_deck)
+
+print("Sorted Deck:", unsorted_deck)
