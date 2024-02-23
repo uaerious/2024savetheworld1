@@ -1,4 +1,6 @@
 # validation (practical)
+# validate a user when they register for an account on a website
+
 def validate_registration(username, email, password):
     # Presence check
     if not username or not email or not password:
