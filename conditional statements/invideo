@@ -1,5 +1,5 @@
 # conditional statement (p)
-# Imagine you are designing a smart home security system.
+# Imagine you are designing a smart home security system. Using conditional statements, create an alarm that rings when user is away and motion is detected or when the windows/doors are open
 
 # Assume the system is set to "away"
 away = True
